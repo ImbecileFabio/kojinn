@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SorceFiles\dx11helper.cpp" />
+    <ClCompile Include="SorceFiles\SubSystem\dx11helper.cpp" />
     <ClCompile Include="SorceFiles\GameObjects\GameObject.cpp" />
     <ClCompile Include="SorceFiles\GameObjects\Component.cpp" />
     <ClCompile Include="SorceFiles\GameManager.cpp" />
@@ -28,7 +28,7 @@
     <ClCompile Include="SorceFiles\Renderer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SorceFiles\dx11helper.h" />
+    <ClInclude Include="SorceFiles\SubSystem\dx11helper.h" />
     <ClInclude Include="SorceFiles\GameObjects\GameObject.h" />
     <ClInclude Include="SorceFiles\GameObjects\Component.h" />
     <ClInclude Include="SorceFiles\GameManager.h" />
@@ -138,6 +138,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

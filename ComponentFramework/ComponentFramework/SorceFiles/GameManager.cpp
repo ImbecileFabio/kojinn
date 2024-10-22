@@ -8,7 +8,9 @@
 /*----- インクルード -----*/
 #include "StdAfx.h"
 #include "GameManager.h"
+#include "Renderer.h"
 #include "GameObjects/GameObject.h"
+
 
 
 //-----------------------------------------------------------------
@@ -40,6 +42,7 @@ void GameManager::InitAll(void)
 
 	game_objects_.clear();
 	pending_game_objects_.clear();
+	renderer_->Init();
 
 	std::cout << "[ゲームマネージャー] -> ゲームオブジェクト生成開始\n";
 	std::cout << "\n";
@@ -57,7 +60,7 @@ void GameManager::UninitAll(void)
 {
 	std::cout << "[ゲームマネージャー] -> 終了処理\n";
 
-
+	renderer_->Uninit();
 
 
 
@@ -81,7 +84,13 @@ void GameManager::UpdateAll()
 void GameManager::GenerateOutputAll(void)
 {
 	std::cout << "[ゲームマネージャ] -> 出力生成処理\n";
+	// 初期色に
+	renderer_->Begin();
 
+
+
+	// 描画終了
+	renderer_->End();
 }
 
 //-----------------------------------------------------------------

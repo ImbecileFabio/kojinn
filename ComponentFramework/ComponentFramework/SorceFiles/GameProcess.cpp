@@ -10,6 +10,7 @@
 #include "StdAfx.h"
 #include "GameProcess.h"
 #include "GameManager.h"
+#include "Renderer.h"
 
 const auto ClassName = TEXT("2024 framework ひな形");	// ウィンドウクラス
 const auto WindowName = TEXT("2024 framework ひな形(フィールド描画)");	// ウィンドウ名
@@ -44,6 +45,9 @@ GameProcess::~GameProcess(void)
 //--------------------------------------------------
 bool GameProcess::StartUp(void)
 {
+	std::cout << "[ゲームプロセス] -> 起動\n";
+	std::cout << "\n";
+
 	// 成功したかどうか
 	bool is_init_success;
 
@@ -57,6 +61,9 @@ bool GameProcess::StartUp(void)
 //--------------------------------------------------
 void GameProcess::Run(void)
 {
+	std::cout << "[ゲームプロセス] -> 実行\n";
+	std::cout << "\n";
+
 	// メッセージ
 	MSG msg = {};
 
@@ -97,7 +104,6 @@ void GameProcess::Run(void)
 			// 1/60	秒が経過したか?
 			if (nowCount >= oldCount + frequency / 60)
 			{
-				GameProcess::ProcessInput();
 				GameProcess::Update();
 				GameProcess::GenerateOutput();
 
@@ -116,6 +122,8 @@ void GameProcess::Run(void)
 //--------------------------------------------------
 void GameProcess::ShutDown(void)
 {
+	std::cout << "[ゲームプロセス] -> 停止\n";
+
 	GameProcess::Uninit();
 }
 
@@ -124,6 +132,8 @@ void GameProcess::ShutDown(void)
 //--------------------------------------------------
 bool GameProcess::Init(void)
 {
+	std::cout << "[ゲームプロセス] -> ◆初期化処理開始◆\n";
+
 	{
 		// ウィンドウを生成
 		InitWnd();
@@ -132,6 +142,8 @@ bool GameProcess::Init(void)
 		game_manager_ = game_manager_->Create();
 		if (false) { return false; }
 	}
+	std::cout << "[ゲームプロセス] -> ◇初期化処理終了◇\n";
+	std::cout << "\n";
 
 	return true;
 }
@@ -141,9 +153,14 @@ bool GameProcess::Init(void)
 //--------------------------------------------------
 void GameProcess::Uninit(void)
 {
+	std::cout << "[ゲームプロセス] -> ◆終了処理開始◆\n";
 	{
 		delete game_manager_;
 	}
+
+	std::cout << "[ゲームプロセス] -> ◇終了処理終了◇\n";
+	std::cout << "\n";
+
 }
 
 //--------------------------------------------------
@@ -151,6 +168,8 @@ void GameProcess::Uninit(void)
 //--------------------------------------------------
 bool GameProcess::InitWnd(void)
 {
+	std::cout << "[ゲームプロセス] -> ウィンドウ初期化開始\n";
+
 	// インスタンスハンドルを取得
 	auto hInst = GetModuleHandle(nullptr);
 	if (hInst == nullptr) { return false; }
@@ -212,15 +231,19 @@ bool GameProcess::InitWnd(void)
 	// ウィンドウにフォーカスを設定.
 	SetFocus(hWnd_);
 
+	std::cout << "[ゲームプロセス] -> ウィンドウ初期化終了\n";
+
 	// 正常終了.
 	return true;
 }
 
 //--------------------------------------------------
-// ウィンドウの初期化処理
+// ウィンドウの終了処理
 //--------------------------------------------------
 void GameProcess::UninitWnd(void)
 {
+	std::cout << "[ゲームプロセス] -> ウィンドウ終了処理開始\n";
+
 	// ウィンドウの登録を解除
 	if(hInst_ != nullptr)
 	{
@@ -229,6 +252,9 @@ void GameProcess::UninitWnd(void)
 
 	hInst_ = nullptr;
 	hWnd_ = nullptr;
+
+	std::cout << "[ゲームプロセス] -> ウィンドウ終了処理開始\n";
+	std::cout << "\n";
 }
 
 
@@ -237,9 +263,14 @@ void GameProcess::UninitWnd(void)
 //--------------------------------------------------
 void GameProcess::Update(void)
 {
+	std::cout << "[ゲームプロセス] -> ◆更新処理開始◆\n";
+
 	{
 		game_manager_->UpdateAll();
 	}
+	std::cout << "[ゲームプロセス] -> ◇更新処理終了◇\n";
+	std::cout << "\n";
+
 }
 
 //--------------------------------------------------
@@ -247,9 +278,14 @@ void GameProcess::Update(void)
 //--------------------------------------------------
 void GameProcess::GenerateOutput(void)
 {
+	std::cout << "[ゲームプロセス] -> ◆出力生成処理開始◆\n";
+
 	{
+		// オブジェクト描画
 		game_manager_->GenerateOutputAll();
 	}
+	std::cout << "[ゲームプロセス] -> ◇出力生成処理終了◇\n";
+	std::cout << "\n";
 }
 
 //--------------------------------------------------

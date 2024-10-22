@@ -49,7 +49,7 @@ private:
 
 private:
 	// 作ったオブジェクトをここに記述
-	// class Player* player_;	的な
+	class Renderer* renderer_;	// レンダラー
 };
 
 

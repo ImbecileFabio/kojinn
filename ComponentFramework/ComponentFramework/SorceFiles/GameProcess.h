@@ -50,7 +50,6 @@ private:
 	void Uninit(void);
 	bool InitWnd(void);
 	void UninitWnd(void);
-	void ProcessInput(void);
 	void Update(void);
 	void GenerateOutput(void);
 
