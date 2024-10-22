@@ -18,11 +18,40 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SorceFiles\dx11helper.cpp" />
+    <ClCompile Include="SorceFiles\GameObjects\GameObject.cpp" />
+    <ClCompile Include="SorceFiles\GameObjects\Component.cpp" />
+    <ClCompile Include="SorceFiles\GameManager.cpp" />
+    <ClCompile Include="SorceFiles\GameProcess.cpp" />
+    <ClCompile Include="SorceFiles\main.cpp" />
+    <ClCompile Include="SorceFiles\Renderer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SorceFiles\dx11helper.h" />
+    <ClInclude Include="SorceFiles\GameObjects\GameObject.h" />
+    <ClInclude Include="SorceFiles\GameObjects\Component.h" />
+    <ClInclude Include="SorceFiles\GameManager.h" />
+    <ClInclude Include="SorceFiles\GameProcess.h" />
+    <ClInclude Include="SorceFiles\main.h" />
+    <ClInclude Include="SorceFiles\Renderer.h" />
+    <ClInclude Include="SorceFiles\StdAfx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Shader\unlitTexturePS.hlsl">
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ps_main</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="Shader\unlitTextureVS.hlsl">
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">vs_main</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+    </FxCompile>
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{387d8320-1fd6-4f2e-8b32-c5aa9bac442f}</ProjectGuid>
-    <RootNamespace>HEW2024</RootNamespace>
+    <ProjectGuid>{6665e80b-9a73-40cd-abbe-edf67c9cb3ef}</ProjectGuid>
+    <RootNamespace>ComponentFramework</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -43,7 +72,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -70,6 +99,10 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>C\directxtk\include;C:\Users\imbec\OneDrive\デスクトップ\HAL\DX\22\directxtk\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C\directxtk\lib\x64\Debug;C:\Users\imbec\OneDrive\デスクトップ\HAL\DX\22\directxtk\lib\x64\Debug;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -104,6 +137,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -126,9 +160,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="HEW_2024.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
