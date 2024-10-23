@@ -33,6 +33,8 @@ public:
 	void UpdateAll(void);
 	void GenerateOutputAll(void);
 
+	class Renderer* GetRenderer(void) { return renderer_; }
+
 	// ゲームオブジェクトの追加
 	void AddGameObject(class GameObject* gameObject);
 	void RemoveGameObject(class GameObject* gameObject);

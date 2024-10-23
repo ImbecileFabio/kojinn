@@ -4,8 +4,12 @@
 //--------------------------------------------------
 // 説明：DirectXの定義とか
 //==================================================
+
+/*----- インクルード -----*/
+#include "StdAfx.h"
 #include "Renderer.h"
 #include "GameProcess.h"
+#include "GameObjects/Component/RenderComponent/SpriteComponent.h"
 
 using namespace DirectX::SimpleMath;
 
@@ -28,6 +32,23 @@ ID3D11DepthStencilState* Renderer::m_DepthStateDisable{};
 
 ID3D11BlendState* Renderer::m_BlendState[MAX_BLENDSTATE]; // ブレンドステート配列
 ID3D11BlendState* Renderer::m_BlendStateATC{}; // 特定のアルファテストとカバレッジ（ATC）用のブレンドステート
+
+
+//-----------------------------------------------------------------
+// コンストラクタ
+//-----------------------------------------------------------------
+Renderer::Renderer(GameManager* gameManager)
+{
+	std::cout << "[レンダラー] -> 生成\n";
+}
+
+//-----------------------------------------------------------------
+// デストラクタ
+//-----------------------------------------------------------------
+Renderer::~Renderer(void)
+{
+	std::cout << "[レンダラー] -> 破棄\n";
+}
 
 
 //-----------------------------------------------------------------
@@ -230,6 +251,25 @@ void Renderer::Begin()
 	m_DeviceContext->ClearRenderTargetView(m_RenderTargetView, clearColor);
 	m_DeviceContext->ClearDepthStencilView(m_DepthStencilView, D3D11_CLEAR_DEPTH, 1.0f, 0);
 }
+
+//-----------------------------------------------------------------
+// 描画処理
+//-----------------------------------------------------------------
+void Renderer::Draw()
+{
+	std::cout << "\n";
+	std::cout << "[レンダラー] -> 描画開始\n";
+
+	for (auto sprite : sprites_)
+	{
+		sprite->Draw();
+	}
+
+	std::cout << "[レンダラー] -> 描画終了\n";
+	std::cout << "\n";
+
+}
+
 
 //-----------------------------------------------------------------
 //描画終了

@@ -19,6 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="SorceFiles\GameObjects\Component\RenderComponent.cpp" />
+    <ClCompile Include="SorceFiles\GameObjects\Component\PlayerComponent.cpp" />
+    <ClCompile Include="SorceFiles\GameObjects\GameObject\Player.cpp" />
     <ClCompile Include="SorceFiles\SubSystem\dx11helper.cpp" />
     <ClCompile Include="SorceFiles\GameObjects\GameObject.cpp" />
     <ClCompile Include="SorceFiles\GameObjects\Component.cpp" />
@@ -26,8 +29,12 @@
     <ClCompile Include="SorceFiles\GameProcess.cpp" />
     <ClCompile Include="SorceFiles\main.cpp" />
     <ClCompile Include="SorceFiles\Renderer.cpp" />
+    <ClCompile Include="SorceFiles\GameObjects\Component\RenderComponent\SpriteComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="SorceFiles\GameObjects\Component\RenderComponent.h" />
+    <ClInclude Include="SorceFiles\GameObjects\Component\PlayerComponent.h" />
+    <ClInclude Include="SorceFiles\GameObjects\GameObject\Player.h" />
     <ClInclude Include="SorceFiles\SubSystem\dx11helper.h" />
     <ClInclude Include="SorceFiles\GameObjects\GameObject.h" />
     <ClInclude Include="SorceFiles\GameObjects\Component.h" />
@@ -36,6 +43,7 @@
     <ClInclude Include="SorceFiles\main.h" />
     <ClInclude Include="SorceFiles\Renderer.h" />
     <ClInclude Include="SorceFiles\StdAfx.h" />
+    <ClInclude Include="SorceFiles\GameObjects\Component\RenderComponent\SpriteComponent.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Shader\unlitTexturePS.hlsl">

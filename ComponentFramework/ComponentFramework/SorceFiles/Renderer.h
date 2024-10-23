@@ -45,11 +45,17 @@ enum EBlendState {
 class Renderer
 {
 public:
+	Renderer(class GameManager* gameManager);
+	~Renderer(void);
 
 	static void Init();
 	static void Uninit();
 	static void Begin();
+	static void Draw();
 	static void End();
+
+	void AddSprite(class SpriteComponent* spriteComponent);
+	void RemoveSprite(class SpriteComponent* spriteComponent);
 
 	static void SetDepthEnable(bool Enable);
 
@@ -67,6 +73,8 @@ public:
 	static void CreatePixelShader(ID3D11PixelShader** PixelShader, const char* FileName);
 
 private:
+
+	std::vector<class SpriteComponent*> sprites_;
 
 	static D3D_FEATURE_LEVEL m_FeatureLevel;
 

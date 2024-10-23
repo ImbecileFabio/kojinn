@@ -27,8 +27,9 @@ public:
 		, Component
 
 		// ここに追加したコンポーネントを書いていく
-		// レンダリングするオブジェクト
-		//, RenderComponent
+		, RenderComponent
+		, SpriteComponent
+		, PlayerComponent
 
 		// コンポーネントの最大値
 		, MAX
