@@ -26,7 +26,7 @@ public:
 
 	virtual TypeID GetType(void) const { return TypeID::Player; }
 private:
-	class PlayerComponent* Player_component_;
+	class SpriteComponent* sprite_;
 };
 
 

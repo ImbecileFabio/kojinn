@@ -7,9 +7,8 @@
 
 /*----- インクルード -----*/
 #include "../../StdAfx.h"
-#include "../../GameManager.h"
 #include "Player.h"
-#include "../Component/PlayerComponent.h"
+#include "../Component/RenderComponent/SpriteComponent.h"
 
 //--------------------------------------------------
 // コンストラクタ
@@ -19,7 +18,7 @@ Player::Player(class GameManager* gameManager)
 {
 	std::cout << "＜プレイヤー＞ -> 生成\n";
 
-	player_component_ = new PlayerComponent(this, 10);
+	sprite_ = new SpriteComponent(this);
 }
 
 //--------------------------------------------------
