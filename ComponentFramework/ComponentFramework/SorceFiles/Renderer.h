@@ -14,6 +14,7 @@
 #include	<io.h>
 #include	<string>
 #include	<vector>
+#include	<memory>
 
 #pragma comment(lib, "directxtk.lib")
 #pragma comment(lib, "d3d11.lib")
@@ -66,7 +67,9 @@ public:
 	static void SetViewMatrix(DirectX::SimpleMath::Matrix* ViewMatrix);
 	static void SetProjectionMatrix(DirectX::SimpleMath::Matrix* ProjectionMatrix);
 
+	// デバイスを返す
 	static ID3D11Device* GetDevice(void) { return m_Device; }
+	// デバイスコンテキストを返す
 	static ID3D11DeviceContext* GetDeviceContext(void) { return m_DeviceContext; }
 
 	static void CreateVertexShader(ID3D11VertexShader** VertexShader, ID3D11InputLayout** VertexLayout, const char* FileName);

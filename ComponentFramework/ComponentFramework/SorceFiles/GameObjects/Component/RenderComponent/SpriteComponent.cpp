@@ -20,9 +20,28 @@ SpriteComponent::SpriteComponent(GameObject* owner, int drawOrder)
 	, draw_order_(draw_order_)
 {
 	this->owner_->GetGameManager()->GetRenderer()->AddSprite(this);
+
+	object_name_ = std::string("不明なオブジェクト");
 }
 
-
+//--------------------------------------------------
+// デストラクタ
+//--------------------------------------------------
 SpriteComponent::~SpriteComponent(void)
 {
+}
+
+//--------------------------------------------------
+// 名前を定義する関数
+//--------------------------------------------------
+void SpriteComponent::SetObjectName(std::string _objectName)
+{
+	object_name_ = _objectName;
+}
+
+void SpriteComponent::Draw(void)
+{
+	std::cout << object_name_ + "の画像が描画された\n";
+
+
 }

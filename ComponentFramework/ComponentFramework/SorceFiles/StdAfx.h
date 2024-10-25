@@ -25,6 +25,7 @@
 #include <chrono>
 #include <thread>
 #include <vector>
+#include <memory>
 
 
 #pragma warning(push)

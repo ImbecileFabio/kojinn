@@ -19,6 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="SorceFiles\SubSystem\Shader.cpp" />
+    <ClCompile Include="SorceFiles\GameObjects\Component\ColliderComponent.cpp" />
     <ClCompile Include="SorceFiles\GameObjects\Component\RenderComponent.cpp" />
     <ClCompile Include="SorceFiles\GameObjects\Component\PlayerComponent.cpp" />
     <ClCompile Include="SorceFiles\GameObjects\GameObject\Player.cpp" />
@@ -32,6 +34,8 @@
     <ClCompile Include="SorceFiles\GameObjects\Component\RenderComponent\SpriteComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="SorceFiles\SubSystem\Shader.h" />
+    <ClInclude Include="SorceFiles\GameObjects\Component\ColliderComponent.h" />
     <ClInclude Include="SorceFiles\GameObjects\Component\RenderComponent.h" />
     <ClInclude Include="SorceFiles\GameObjects\Component\PlayerComponent.h" />
     <ClInclude Include="SorceFiles\GameObjects\GameObject\Player.h" />
@@ -44,6 +48,8 @@
     <ClInclude Include="SorceFiles\Renderer.h" />
     <ClInclude Include="SorceFiles\StdAfx.h" />
     <ClInclude Include="SorceFiles\GameObjects\Component\RenderComponent\SpriteComponent.h" />
+    <ClInclude Include="SorceFiles\SubSystem\IndexBuffer.h" />
+    <ClInclude Include="SorceFiles\SubSystem\VertexBuffer.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Shader\unlitTexturePS.hlsl">
@@ -108,8 +114,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C\directxtk\include;C:\Users\imbec\OneDrive\デスクトップ\HAL\DX\22\directxtk\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C\directxtk\lib\x64\Debug;C:\Users\imbec\OneDrive\デスクトップ\HAL\DX\22\directxtk\lib\x64\Debug;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\directxtk\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\directxtk\lib\x64\Debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

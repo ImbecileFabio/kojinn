@@ -87,7 +87,7 @@ void GameManager::GenerateOutputAll(void)
 	// ‰ŠúF‚É
 	renderer_->Begin();
 
-
+	renderer_->Draw();
 
 	// •`‰æI—¹
 	renderer_->End();

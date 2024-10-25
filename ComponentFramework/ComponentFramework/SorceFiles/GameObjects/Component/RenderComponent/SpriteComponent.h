@@ -9,6 +9,7 @@
 
 /*----- インクルード -----*/
 #include "../RenderComponent.h"
+
 /*----- 構造体定義 -----*/
 
 /*----- 前方宣言 -----*/
@@ -19,19 +20,21 @@
 class SpriteComponent :
     public RenderComponent
 {
+public:
     SpriteComponent(class GameObject* owner, int drawOrder = 100);
     ~SpriteComponent(void);
 
-    void SetObjectName(std::string objectName);
+    void SetObjectName(std::string _objectName);
     void Draw(void);
 
+    // 更新順位を返す
     int GetDrawOrder(void) { return draw_order_; }
-
+    // コンポーネントのIDを返す
     TypeID GetComponentType(void) const override { return TypeID::SpriteComponent; }
 
 private:
-    int draw_order_;
-    std::string object_name_;
+    int draw_order_;            // 更新順位
+    std::string object_name_;   // オブジェクト名
 };
 
 

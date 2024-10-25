@@ -56,6 +56,9 @@ Renderer::~Renderer(void)
 //-----------------------------------------------------------------
 void Renderer::Init()
 {
+
+	// メンバ変数の初期化
+
 	HRESULT hr = S_OK;
 
 	// デバイス、スワップチェーン作成
@@ -277,6 +280,32 @@ void Renderer::Draw()
 void Renderer::End()
 {
 	m_SwapChain->Present(1, 0);
+}
+
+
+//-----------------------------------------------------------------
+// 画像追加
+//-----------------------------------------------------------------
+void Renderer::AddSprite(SpriteComponent* spriteComponent)
+{
+	int myDrawOrder = spriteComponent->GetDrawOrder();
+	auto iter = sprites_.begin();
+	for (;
+		iter != sprites_.end();
+		++iter)
+	{
+		if (myDrawOrder < (*iter)->GetDrawOrder()) { break; }
+	}
+
+}
+
+//-----------------------------------------------------------------
+// 画像削除
+//-----------------------------------------------------------------
+void Renderer::RemoveSprite(SpriteComponent* spriteComponent)
+{
+	auto iter = std::find(sprites_.begin(), sprites_.end(), spriteComponent);
+	sprites_.erase(iter);
 }
 
 //-----------------------------------------------------------------
