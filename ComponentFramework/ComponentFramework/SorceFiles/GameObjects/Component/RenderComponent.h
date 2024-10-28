@@ -17,7 +17,7 @@ class RenderComponent : public Component
 {
 public:
 	RenderComponent(class GameObject* owner, int drawOrder = 100);
-	~RenderComponent(void) = default;
+	~RenderComponent(void);
 
 	TypeID GetComponentType(void) const override { return TypeID::RenderComponent; }
 

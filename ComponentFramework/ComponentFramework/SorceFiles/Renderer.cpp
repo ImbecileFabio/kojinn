@@ -56,8 +56,8 @@ Renderer::~Renderer(void)
 //-----------------------------------------------------------------
 void Renderer::Init()
 {
-
 	// メンバ変数の初期化
+	sprites_.clear();
 
 	HRESULT hr = S_OK;
 
@@ -297,6 +297,8 @@ void Renderer::AddSprite(SpriteComponent* spriteComponent)
 		if (myDrawOrder < (*iter)->GetDrawOrder()) { break; }
 	}
 
+	// イテレータの前に要素を挿入
+	sprites_.insert(iter, spriteComponent);
 }
 
 //-----------------------------------------------------------------

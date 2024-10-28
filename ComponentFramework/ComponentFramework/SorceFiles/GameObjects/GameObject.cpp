@@ -127,7 +127,7 @@ void GameObject::AddComponent(Component* component)
 
 	// 現在から追加されるコンポーネントのUpdateOrderと
 	// 各コンポーネントのUpdateOrderとを比較
-	// UpdateOrderがこう順次なるように適時追加してく
+	// UpdateOrderがこうじゅんになるように適時追加してく
 	auto iter = components_.begin();
 	for (; iter != components_.end(); ++iter)
 		if (my_update_order < (*iter)->GetUpdateOrder()) { break; }

@@ -49,11 +49,11 @@ public:
 	Renderer(class GameManager* gameManager);
 	~Renderer(void);
 
-	static void Init();
-	static void Uninit();
-	static void Begin();
-	static void Draw();
-	static void End();
+	void Init();
+	void Uninit();
+	void Begin();
+	void Draw();
+	void End();
 
 	void AddSprite(class SpriteComponent* spriteComponent);
 	void RemoveSprite(class SpriteComponent* spriteComponent);
@@ -77,7 +77,7 @@ public:
 
 private:
 
-	static std::vector<class SpriteComponent*> sprites_;
+	std::vector<class SpriteComponent*> sprites_;
 
 	static D3D_FEATURE_LEVEL m_FeatureLevel;
 

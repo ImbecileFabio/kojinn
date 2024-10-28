@@ -40,6 +40,9 @@ void GameManager::InitAll(void)
 {
 	std::cout << "[ゲームマネージャー] -> 初期化処理\n";
 
+	// レンダラー初期化
+	renderer_ = new Renderer(this);
+
 	game_objects_.clear();
 	pending_game_objects_.clear();
 	renderer_->Init();
@@ -47,7 +50,7 @@ void GameManager::InitAll(void)
 	std::cout << "[ゲームマネージャー] -> ゲームオブジェクト生成開始\n";
 	std::cout << "\n";
 
-	//////
+	// player_ = new Player(this);
 
 	std::cout << "\n";
 	std::cout << "[ゲームマネージャー] -> ゲームオブジェクト生成終了\n";
