@@ -20,7 +20,7 @@ RenderComponent::RenderComponent(GameObject* owner, int updateOrder)
 }
 
 //--------------------------------------------------
-// コンストラクタ
+// デストラクタ
 //--------------------------------------------------
 RenderComponent::~RenderComponent(void)
 {

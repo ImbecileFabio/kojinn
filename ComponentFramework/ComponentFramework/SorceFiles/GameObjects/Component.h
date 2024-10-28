@@ -27,10 +27,15 @@ public:
 		, Component
 
 		// ここに追加したコンポーネントを書いていく
+		// レンダリング
 		, RenderComponent
 		, SpriteComponent
+
+		// 衝突判定
 		, ColliderComponent
-		, PlayerComponent
+
+		// 姿勢制御
+		, TransformComponent
 
 
 		// コンポーネントの最大値

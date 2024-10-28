@@ -16,14 +16,21 @@ const char* Component::ComponentTypeNames[static_cast<int>(TypeID::MAX)] =
 	"Component"
 
 	//ここに追加したコンポーネントを記述していく
-	// レンダリング用オブジェクト
-	//, "RenderComponent"
+	// レンダリング
+	, "RenderComponent"
+	, "SpriteComponent"
+	
+	// 衝突判定
+	, "ColliderComponent"
+
+	// 姿勢制御
+	, "TransformComponent"
+
 };
 
 //--------------------------------------------------
 // コンストラクタ
 //--------------------------------------------------
-// ゲームオブジェクト
 Component::Component(GameObject* owner, int updateOrder)
 	: owner_(owner)
 	, update_order_(updateOrder)

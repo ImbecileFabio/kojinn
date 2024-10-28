@@ -77,7 +77,7 @@ public:
 
 private:
 
-	std::vector<class SpriteComponent*> sprites_;
+	static std::vector<class SpriteComponent*> sprites_;
 
 	static D3D_FEATURE_LEVEL m_FeatureLevel;
 

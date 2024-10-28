@@ -22,7 +22,6 @@
     <ClCompile Include="SorceFiles\SubSystem\Shader.cpp" />
     <ClCompile Include="SorceFiles\GameObjects\Component\ColliderComponent.cpp" />
     <ClCompile Include="SorceFiles\GameObjects\Component\RenderComponent.cpp" />
-    <ClCompile Include="SorceFiles\GameObjects\Component\PlayerComponent.cpp" />
     <ClCompile Include="SorceFiles\GameObjects\GameObject\Player.cpp" />
     <ClCompile Include="SorceFiles\SubSystem\dx11helper.cpp" />
     <ClCompile Include="SorceFiles\GameObjects\GameObject.cpp" />
@@ -32,12 +31,12 @@
     <ClCompile Include="SorceFiles\main.cpp" />
     <ClCompile Include="SorceFiles\Renderer.cpp" />
     <ClCompile Include="SorceFiles\GameObjects\Component\RenderComponent\SpriteComponent.cpp" />
+    <ClCompile Include="SorceFiles\GameObjects\Component\TransformComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SorceFiles\SubSystem\Shader.h" />
     <ClInclude Include="SorceFiles\GameObjects\Component\ColliderComponent.h" />
     <ClInclude Include="SorceFiles\GameObjects\Component\RenderComponent.h" />
-    <ClInclude Include="SorceFiles\GameObjects\Component\PlayerComponent.h" />
     <ClInclude Include="SorceFiles\GameObjects\GameObject\Player.h" />
     <ClInclude Include="SorceFiles\SubSystem\dx11helper.h" />
     <ClInclude Include="SorceFiles\GameObjects\GameObject.h" />
@@ -50,6 +49,7 @@
     <ClInclude Include="SorceFiles\GameObjects\Component\RenderComponent\SpriteComponent.h" />
     <ClInclude Include="SorceFiles\SubSystem\IndexBuffer.h" />
     <ClInclude Include="SorceFiles\SubSystem\VertexBuffer.h" />
+    <ClInclude Include="SorceFiles\GameObjects\Component\TransformComponent.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Shader\unlitTexturePS.hlsl">

@@ -53,7 +53,6 @@ public:
 
 	void Init(void);
 	void Uninit(void);
-	void Input(void);
 	virtual void InputGameObject(void);	// Œã‚Åoverride‚Å‚«‚é‚æ‚¤‚É
 	void Update(void);
 	void UpdateComponents(void);
