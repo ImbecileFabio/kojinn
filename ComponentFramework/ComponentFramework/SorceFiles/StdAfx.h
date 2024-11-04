@@ -27,7 +27,6 @@
 #include <vector>
 #include <memory>
 
-
 #pragma warning(push)
 #pragma warning(disable:4005)
 
